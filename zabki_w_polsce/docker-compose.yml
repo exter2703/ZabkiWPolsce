@@ -1,0 +1,21 @@
+services:
+  api:
+    build: .
+    image: zabki-location-app:latest
+    command: uvicorn zabki_prediction.api.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+
+  streamlit:
+    image: zabki-location-streamlit-app:latest
+    build: .
+    command: >
+      streamlit run src/zabki_prediction/ui/streamlit_app.py
+      --server.address 0.0.0.0
+      --server.port 8501
+      --server.headless true
+      --browser.gatherUsageStats false
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api

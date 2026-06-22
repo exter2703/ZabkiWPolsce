@@ -1,0 +1,27 @@
+name: Continuous Training
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1"
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run Kedro training pipeline
+        run: kedro run --pipeline site_selection
+      - name: Upload model artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: zabki-model-artifacts
+          path: |
+            data/06_models/
+            data/07_model_output/
+            data/08_reporting/

@@ -1,0 +1,2 @@
+city,lon,lat,population,radius_km,source
+Sulejówek,21.2690,52.2520,21669,6.0,"manual city center; population from GUS 2025 city_population.csv"

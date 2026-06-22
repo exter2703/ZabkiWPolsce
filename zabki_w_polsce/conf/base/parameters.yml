@@ -1,0 +1,39 @@
+modeling:
+  random_state: 42
+  poland_bbox:
+    min_lon: 14.1
+    max_lon: 24.2
+    min_lat: 49.0
+    max_lat: 54.9
+  candidate_grid_step_degrees: 0.06
+  min_candidate_distance_km: 0.35
+  negative_ratio: 2.0
+  top_n_candidates: 250
+  autogluon_time_limit_seconds: 600
+  autogluon_presets: medium_quality
+  model_path: data/06_models/autogluon_site_selector
+  feature_columns:
+    - lon
+    - lat
+    - nearest_store_km
+    - stores_1km
+    - stores_3km
+    - stores_5km
+    - stores_10km
+    - stores_25km
+    - nearest_city_center_km
+    - nearest_city_store_count
+    - city_population
+    - log_city_population
+    - stores_per_10k_residents
+    - residents_per_store
+    - population_missing
+    - lon_sin
+    - lon_cos
+    - lat_sin
+    - lat_cos
+
+mlflow:
+  tracking_uri: mlruns
+  experiment_name: zabka_location_prediction
+  registered_model_name: zabka-location-autogluon

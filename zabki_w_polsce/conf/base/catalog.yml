@@ -1,0 +1,51 @@
+raw_zabka_geojson:
+  type: json.JSONDataset
+  filepath: zabka_locs.geojson
+
+city_population:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/city_population.csv
+
+store_points:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/store_points.csv
+  save_args:
+    index: false
+
+training_table:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/training_table.csv
+  save_args:
+    index: false
+
+candidate_table:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/candidate_table.csv
+  save_args:
+    index: false
+
+model_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/model_metrics.json
+
+top_candidate_locations:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/top_candidate_locations.csv
+  save_args:
+    index: false
+
+all_candidate_locations:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/all_candidate_locations.csv
+  save_args:
+    index: false
+
+city_location_scores:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/city_location_scores.csv
+  save_args:
+    index: false
+
+monitoring_profile:
+  type: json.JSONDataset
+  filepath: data/08_reporting/training_profile.json
