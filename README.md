@@ -95,4 +95,4 @@ docker run -p 8000:8000 zabki-location-app
 
 Projekt nie wymaga recznego wybierania punktow na mapie. Mapa sluzy do wizualizacji rankingu, a kandydaci sa generowani automatycznie z siatki geograficznej nad Polska. W kolejnej iteracji mozna podlaczyc dodatkowe zrodla, np. gestosc ludnosci, przystanki, konkurencje i lokale uslugowe z OSM.
 
-## Autorzy: Oskar Wiktorowicz, Jakub Truszczyński
+## Autorzy: Oskar Wiktorowicz (s28038), Jakub Truszczyński (s28774)
